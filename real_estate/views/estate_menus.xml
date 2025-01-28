@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <menuitem id="estate_property_menu_root" name="Real Estate"/>
+
+    <menuitem id="estate_property_advertisement_menu" name="Advertisements" parent="estate_property_menu_root"/>
+    <menuitem id="estate_property_menu_action" action="estate_property_action" parent="estate_property_advertisement_menu"/>
+
+    <menuitem id="estate_property_type_menu" name="Settings" parent="estate_property_menu_root"/>
+    <menuitem id="estate_property_type_menu_action" action="estate_property_type_action" parent="estate_property_type_menu"/>
+    <menuitem id="estate_property_tag_menu_action" action="estate_property_tag_action" parent="estate_property_type_menu"/>
+
+
+
+</odoo>
+
+
+
+
+
+
+
+
+
+    <!-- <menuitem id="menu_hospital_root" name="HMS" sequence="35"/>
+
+    <menuitem id="menu_frontdesk" name="Front Desk" parent="menu_hospital_root"/>
+
+    <menuitem id="menu_patient" name="Patients" parent="menu_frontdesk" action="action_hospital_patient"/> -->
