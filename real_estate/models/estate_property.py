@@ -28,6 +28,9 @@ class EstateProperty(models.Model):
     buyer = fields.Many2one("res.partner", string="Buyer", copy=False)
     seller = fields.Many2one("res.users", string="Salesman", index=True, default=lambda self: self.env.user)
     tags_ids = fields.Many2many("estate.property.tag", string="Tags")
+    offer_ids = fields.One2many("estate.property.offer", "property_id", string="Offers")
+    # partner_id = fields.Many2one("res.partner")
+
     # seller = fields.Many2one("res.users", string="Salesman", index=True, tracking=True, default=lambda self: self.env.user)
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
@@ -37,3 +40,8 @@ class EstateProperty(models.Model):
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
+
+    # @api.depends("partner_id.name")
+    # def _compute_description(self):
+    #     for record in self:
+    #         record.description = "Test for partner %s" % record.partner_id.name

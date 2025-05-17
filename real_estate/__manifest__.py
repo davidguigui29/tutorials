@@ -14,7 +14,7 @@ Real Estate
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Industries',
     'version': '0.1',
     'sequence': 1,
     'application': True,
@@ -26,13 +26,22 @@ Real Estate
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/estate_property_offer_view.xml',
         'views/estate_property_views.xml',
         'views/estate_property_type_views.xml',
         'views/estate_property_tag_views.xml',
         'views/estate_menus.xml',
+        
         # 'views/views.xml',
         # 'views/templates.xml',
     ],
+
+    'assets': {
+        'web.assets_backend': [
+            'real_estate/static/src/scss/my_styles.scss',
+        ]
+    },
+
     # only loaded in demonstration mode
     'demo': [
         # 'demo/demo.xml',

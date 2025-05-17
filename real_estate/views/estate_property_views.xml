@@ -120,17 +120,39 @@
                                 <field name="living_area" />
                                 <field name="facades" />
                                 <field name="garage" />
-                                <field name="garden" />
                                 <field name="garden_area" />
                                 <field name="garden_orientation" />
+                                <field name="total_area" />
                             </group>
                         </page>
 
+                        
                         <page string="Offers">
-                            <group>
-
-                            </group>
+                            <!-- Wrap the one2many field in a DIV with float:right -->
+                            <div style="float: right;">
+                                <field name="offer_ids">
+                                    <list class="my_custom_tree">
+                                        <field name="price" />
+                                        <field name="partner_id" />
+                                        <field name="status" />
+                                    </list>
+                                    <form string="Offer Details">
+                                        <sheet>
+                                            <!-- Wrap the group in a div with flex centering -->
+                                            <!-- <div style="display: flex; justify-content: center; align-items: center;"> -->
+                                                <group>
+                                                    <field name="price" />
+                                                    <field name="partner_id" />
+                                                    <field name="status" />
+                                                </group>
+                                            <!-- </div> -->
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </div>
                         </page>
+
+
 
                         <page string="Other Info">
                             <group>
@@ -140,26 +162,7 @@
 
                         </page>
                     </notebook>
-                    <!-- <div class="oe_button_box" name="button_box">
-                        <button name="action_lost_leads" type="object"
-                            class="oe_stat_button" icon="fa-star">
-                            <div class="o_stat_info">
-                                <field name="leads_count" class="o_stat_value"/>
-                                <span class="o_stat_text"> Leads</span>
-                            </div>
-                        </button>
-                    </div>
-                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active',
-                    '=', True)]}"/> -->
-                    <!-- <div class="oe_title">
-                        <div class="oe_edit_only">
-                            <label for="name"/>
-                        </div>
-                        <h1 class="mb32">
-                            <field name="name" class="mb16"/>
-                        </h1>
-                        <field name="active" invisible="1"/>
-                    </div> -->
+                   
                 </sheet>
             </form>
         </field>
